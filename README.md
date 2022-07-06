@@ -17,11 +17,11 @@ Launch a local development environment by running
 **Component**
 
 Components are split into several different parts
-i. graph display 
+### graph display 
 -   Fetch (ancestor component--- fetch AlphaVintage api)
 -   LineDisplay (display line graph)
 -   CandleDisplay (display candlestick graph)
-ii. theme control 
+### theme control 
 -   ThemeContext (for themecontext)
 -   ThemeToggle (toggle for theme display)
 -   Background (body background set)
