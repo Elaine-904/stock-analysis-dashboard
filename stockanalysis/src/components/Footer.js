@@ -109,7 +109,7 @@ function Footer() {
 
             <div class="text-center p-4 bg-black-500" >
                 © 2022 Copyright:
-                <a class="text-whitehite" href="https://tailwind-elements.com/">website created by elaineHe</a>
+                <a class="text-whitehite" href="https://github.com/Elaine-904?tab=repositories">website created by elaineHe</a>
             </div>
         </footer>
     )

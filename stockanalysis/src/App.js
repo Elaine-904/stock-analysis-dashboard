@@ -1,11 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState, createContext, useContext } from "react";
-
-import NewsBoard from "./components/NewsBoard";
+import NewsBoard from "./pages/NewsBoard";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
-import Header from './components/Header'
 import "./styles/App.css";
 import DarkMode from "./components/DarkMode";
 import 'tw-elements';

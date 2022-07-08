@@ -20,11 +20,11 @@ function NewsBoard() {
     return (
         <div class="container">
 
-            <div class="grid gap-8 grid-cols-4 mt-5 ">
+            <div class="grid gap-5 grid-cols-4 mt-6 ">
                 {news.map((c, index) => {
                     return (
                         <div key={index} class="flex justify-center">
-                            <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                            <div class="rounded-lg shadow-lg bg-gray-200 max-w-md max-h-sm">
                                 <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                                     <img class="rounded-t-lg" 
                                     src={c.banner_image}
@@ -36,7 +36,7 @@ function NewsBoard() {
                                     <p class="text-gray-700 text-base mb-4">
                                       {c.summary}
                                     </p>
-                                    <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+                                        <button type="button" class=" inline-block px-6 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">click to view</button>
                                 </div>
                             </div>
                         </div>
