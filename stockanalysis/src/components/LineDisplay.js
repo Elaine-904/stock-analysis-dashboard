@@ -14,7 +14,7 @@ const LineDisplay=({finalItem})=>{
                 marker: {color: "green"},
             }
         ]}
-        layout={{ title: "linechart display"}}
+        layout={{ title: "linechart display",width:"600"}}
         options ={ {displaylogo: 'false'} }
     />
     )

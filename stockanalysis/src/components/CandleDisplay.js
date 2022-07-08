@@ -44,6 +44,7 @@ const CandleDisplay=({finalItem})=>{
                       b: 40, 
                       l: 60
                     }, 
+                    width:"600",
                     showlegend: false, 
                     xaxis: {
                       autorange: true, 

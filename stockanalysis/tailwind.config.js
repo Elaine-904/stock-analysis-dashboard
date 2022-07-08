@@ -1,5 +1,5 @@
 module.exports = {
-  purge:  ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge:  ['./src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'],
   darkMode: "class",  // or 'media' or 'class'
   theme: {
     container: {
@@ -19,5 +19,7 @@ module.exports = {
     extend: {
     },
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ]
 }

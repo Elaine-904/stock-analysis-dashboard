@@ -1,26 +1,80 @@
 import React from "react";
-import Fetch from "./components/Fetch";
-
-
-
+import axios from "axios";
+import { useEffect, useState, createContext, useContext } from "react";
+import CandleDisplay from "./components/CandleDisplay";
+import LineDisplay from "./components/LineDisplay";
+import Tables from "./components/Tables";
+import NewsBoard from "./components/NewsBoard";
+import Footer from "./components/Footer";
+import SearchBar from "./components/SearchBar";
+import Header from './components/Header'
+import Toggle from "./components/ThemeToggle";
 
 function App() {
+  let chartX = [];
+  let closeValues = [];
+  let openValues = [];
+  let highValues = [];
+  let lowValues = [];
+
+  const financialItem = {
+    ChartXValues: chartX,
+    ChartCloseValues: closeValues,
+    ChartOpenValues: openValues,
+    ChartHighValues: highValues,
+    ChartLowValues: lowValues
+  }
+
+  const [finalItem, setFinalItem] = useState(financialItem)
+
+
+  const url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+
+  useEffect(() => {
+    axios.request(url)
+      .then(response => { return response.data; })
+      .then(data => {
+        console.log(data)
+        const timeSeries = data['Time Series (Daily)']
+        const metaData = data['Meta Data']
+        console.log(metaData)
+        for (let key in timeSeries) {
+          chartX.push(key)
+          openValues.push(timeSeries[key]['1. open'])
+          highValues.push(timeSeries[key]['2. high'])
+          lowValues.push(timeSeries[key]['3. low'])
+          closeValues.push(timeSeries[key]['4. close'])
+        }
+        const result = {
+          ChartXValues: chartX,
+          ChartCloseValues: closeValues,
+          ChartOpenValues: openValues,
+          ChartHighValues: highValues,
+          ChartLowValues: lowValues
+        }
+        console.log(result)
+        setFinalItem(result)
+      }).catch(error => console.log(`erros:${error}`))
+  }, [])
+
+
+
+
+
   return (
-   <body className="flex flex-col h-screen">
-    <header className="transform p-5 bg-blue-300 transition duration-500 hover:bg-blue-800">
-      <h1 className="text-2xl md:text-4xl">STOCK ANLYSIS DASHBOARD</h1>
-    </header>
-    <div className=" my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
-      <Fetch className="md:w-2/3 lg:w-3/4 px-5 py-40"/>
-      <aside className=" md:w-1/3 lg:w-1/4 px-5 py-40">
-            <h1 className="text-2xl md:text-4xl">STOCK </h1>
-        </aside>
-    </div>
-    <footer className="text-gray-500 dark:text-gray-400 mt-auto p-5">
-          <div className="text-center text-xs p-2">
-            Made with TailwindCSS by <a target="_blank" rel="noreferrer" href="https://hellojuninguyen.netlify.app/">elainehe.</a>
-            </div>
-        </footer>
+    <body className="flex flex-col h-screen">
+                  
+        <Header />
+        <Toggle/>
+        <main class="container mb-auto ">
+          <SearchBar />
+          <NewsBoard />
+        </main>
+        <Footer />
+    
+
+
+
     </body>
   );
 }
