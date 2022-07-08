@@ -1,6 +1,7 @@
 import 'tw-elements';
 import axios from "axios";
 import { useEffect, useState, createContext, useContext } from "react";
+
 function NewsBoard() {
     const [news, setNews] = useState([])
     const url = "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&topics=technology&apikey=LL62LSLMAKSWGG1L"
@@ -18,7 +19,8 @@ function NewsBoard() {
 
     return (
         <div class="container">
-            <div class="grid gap-8 grid-cols-3 mt-5 ">
+
+            <div class="grid gap-8 grid-cols-4 mt-5 ">
                 {news.map((c, index) => {
                     return (
                         <div key={index} class="flex justify-center">

@@ -1,0 +1,23 @@
+:root {
+    --black: rgb(233, 237, 242);
+    --white: rgb(0,0,0);
+    --bright:rgb(250, 255, 251)
+  }
+  body {
+    font-family: "Ubuntu", sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-weight: var(--font-weight);
+  }
+  
+  body.light {
+    --background-color: var(--white);
+    --text-color: var(--black);
+    --font-weight: 400;
+  }
+  
+  body.dark {
+    --background-color: var(--black);
+    --text-color: var(--white);
+    --font-weight: 500;
+  }
