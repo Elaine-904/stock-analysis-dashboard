@@ -21,13 +21,13 @@ function App() {
               <h5 class="text-xl text-white pr-2 font-semibold ">Stock Dashboard</h5>
               <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
                 <li class="nav-item p-2">
-                <Link to="/Newsboard">Newsboard</Link> 
+                {/* <Link to="/Newsboard">Newsboard</Link>  */}
                 </li>
                 <li class="nav-item p-2">
                 <Link to="/Tables">TableDisplay</Link>
                 </li>
                 <li class="nav-item p-2">
-                <Link to="/CandleDisplay">ChartDisplay</Link>
+                <Link to="/Test">ChartDisplay</Link>
                 </li>
               </ul>
 
@@ -42,6 +42,7 @@ function App() {
         <main class=" mb-auto ">
           <SearchBar />
           <NewsBoard />
+          frontpage
         </main>
         <Footer />
       </div>

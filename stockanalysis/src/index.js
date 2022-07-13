@@ -10,6 +10,7 @@ import {
 import CandleDisplay from './pages/CandleDisplay'
 import Tables from'./pages/Tables';
 import NewsBoard from './pages/NewsBoard';
+import Test from './pages/Test';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -18,9 +19,9 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="NewsBoard" element={<NewsBoard/>} />
+        {/* <Route path="NewsBoard" element={<NewsBoard/>} /> */}
         <Route path="Tables" element={<Tables/>} />
-        <Route path="CandleDisplay" element={<CandleDisplay/>} />
+        <Route path="Test" element={<Test/>} />
         <Route path="*" element={<main style={{ padding: "1rem" }}><p>There's nothing here!</p></main>}/>
       </Routes>
     </BrowserRouter>
